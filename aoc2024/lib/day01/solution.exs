@@ -1,4 +1,4 @@
-defmodule Aoc2024.Day01 do
+defmodule Aoc2024.Day01.Solution do
   def read_input(file_path) do
     File.stream!(file_path)
     |> Stream.map(&String.trim/1)
@@ -46,4 +46,4 @@ defmodule Aoc2024.Day01 do
 end
 
 # Aoc2024.Day01.part1()
-Aoc2024.Day01.part2("lib/day01.input")
+Aoc2024.Day01.Solution.part2("lib/day01/input")
