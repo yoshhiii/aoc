@@ -1,0 +1,22 @@
+09:29:41.209 [info] Application logger started at :nonode@nohost
+09:29:42.686 [error] FATAL: Lexical is not compatible with Elixir 1.12.2
+
+Lexical is compatible with the following versions of Elixir:
+
+  >= 1.13.0
+  >= 1.14.0
+  >= 1.15.3
+  >= 1.16.0
+  >= 1.17.0
+  >= 1.17.0-rc
+
+
+FATAL: Lexical is not compatible with Erlang/OTP 24.2.1
+
+Lexical is compatible with the following versions of Erlang/OTP:
+
+  >= 24.3.4
+  >= 25.0.0
+  >= 26.0.2
+  >= 27.0.0
+
