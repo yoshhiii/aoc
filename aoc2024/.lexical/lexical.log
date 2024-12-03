@@ -4190,3 +4190,375 @@ Neighbours:
         Current Stacktrace:
             (kernel 9.2.4.2) prim_tty.erl:548: :prim_tty.writer_loop/2
             (stdlib 5.2.3.1) proc_lib.erl:241: :proc_lib.init_p_do_apply/3
+23:42:45.134 [info] Child {LoggerFileBackend, :general_log} of Supervisor Logger.Backends.Supervisor started
+Pid: #PID<0.119.0>
+Start Call: Logger.Backends.Watcher.start_link({{LoggerFileBackend, :general_log}, {LoggerFileBackend, :general_log}})
+Restart: :transient
+Shutdown: 5000
+Type: :worker
+23:42:45.134 [info] Child Logger.Backends.Supervisor of Supervisor Logger.Backends.Internal started
+Pid: #PID<0.118.0>
+Start Call: Logger.Backends.Supervisor.start_link([{LoggerFileBackend, :general_log}])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+23:42:45.134 [info] Child Logger.Backends.Internal of Supervisor Logger.Supervisor started
+Pid: #PID<0.114.0>
+Start Call: Logger.Backends.Internal.start_link([])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+23:42:45.134 [info] Application logger started at :nonode@nohost
+23:42:45.773 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.1528.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+23:42:45.773 [info] Application runtime_tools started at :nonode@nohost
+23:42:45.774 [info] Application erts started at :nonode@nohost
+23:42:45.774 [info] Application lx_lexical_shared started at :nonode@nohost
+23:42:45.774 [info] Application lx_lexical_test started at :nonode@nohost
+23:42:45.775 [info] Child LXSnowflake.Generator of Supervisor #PID<0.1535.0> (Supervisor.Default) started
+Pid: #PID<0.1536.0>
+Start Call: LXSnowflake.Generator.start_link(1704070800000, 1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:45.775 [info] Application lx_snowflake started at :nonode@nohost
+23:42:45.775 [info] Application lx_sourceror started at :nonode@nohost
+23:42:45.775 [info] Application lx_common started at :nonode@nohost
+23:42:45.776 [info] Application lx_elixir_sense started at :nonode@nohost
+23:42:45.776 [info] Application jason started at :nonode@nohost
+23:42:45.776 [info] Application logger_file_backend started at :nonode@nohost
+23:42:45.776 [info] Application lx_path_glob started at :nonode@nohost
+23:42:45.776 [info] Application lx_proto started at :nonode@nohost
+23:42:45.776 [info] Application lx_protocol started at :nonode@nohost
+23:42:45.787 [info] Child LXical.Document.Store of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1549.0>
+Start Call: LXical.Document.Store.start_link([derive: [analysis: &LXical.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:45.790 [info] Child LXical.Server of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1550.0>
+Start Call: LXical.Server.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:45.790 [info] Child LXical.Server.ProjectSupervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1551.0>
+Start Call: DynamicSupervisor.start_link([name: LXical.Server.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+23:42:45.790 [info] Child LXical.Server.TaskQueue.State.TaskSupervisor of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1552.0>
+Start Call: Task.Supervisor.start_link([name: LXical.Server.TaskQueue.State.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+23:42:45.790 [info] Child LXical.Server.TaskQueue of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1553.0>
+Start Call: LXical.Server.TaskQueue.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:45.790 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.1554.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:45.790 [info] Application lx_server started at :nonode@nohost
+23:42:45.806 [info] Starting project at uri file:///home/yoshi/source/aoc/aoc2024
+23:42:45.819 [info] Child {LXical.Server.Project.Progress, "aoc2024"} of Supervisor :"aoc2024::supervisor" started
+Pid: #PID<0.1556.0>
+Start Call: LXical.Server.Project.Progress.start_link(%{__struct__: LXical.Project, entropy: 5967, project_module: nil, mix_exs_uri: "file:///home/yoshi/source/aoc/aoc2024/mix.exs", mix_project?: true, root_uri: "file:///home/yoshi/source/aoc/aoc2024", env_variables: %{}, mix_env: nil, mix_target: nil})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:45.823 [info] Child {LXical.RemoteControl.ProjectNodeSupervisor, "aoc2024"} of Supervisor :"aoc2024::supervisor" started
+Pid: #PID<0.1557.0>
+Start Call: LXical.RemoteControl.ProjectNodeSupervisor.start_link(%{__struct__: LXical.Project, entropy: 5967, project_module: nil, mix_exs_uri: "file:///home/yoshi/source/aoc/aoc2024/mix.exs", mix_project?: true, root_uri: "file:///home/yoshi/source/aoc/aoc2024", env_variables: %{}, mix_env: nil, mix_target: nil})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:45.833 [info] Child :erl_epmd of Supervisor :net_sup started
+Pid: #PID<0.1560.0>
+Start Call: :erl_epmd.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+23:42:45.834 [info] Child :auth of Supervisor :net_sup started
+Pid: #PID<0.1561.0>
+Start Call: :auth.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+23:42:45.837 [info] Child :net_kernel of Supervisor :net_sup started
+Pid: #PID<0.1562.0>
+Start Call: :net_kernel.start_link(%{name: :"manager-aoc2024-5967@127.0.0.1", supervisor: :net_sup_dynamic, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+23:42:45.837 [info] Child :net_sup_dynamic of Supervisor :kernel_sup started
+Pid: #PID<0.1559.0>
+Start Call: :erl_distribution.start_link(%{name: :"manager-aoc2024-5967@127.0.0.1", supervisor: :net_sup_dynamic, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 1000
+Type: :supervisor
+23:42:46.352 [info] Child {LXical.Server.Project.Node, "aoc2024"} of Supervisor :"aoc2024::supervisor" started
+Pid: #PID<0.1558.0>
+Start Call: LXical.Server.Project.Node.start_link(%{__struct__: LXical.Project, entropy: 5967, project_module: nil, mix_exs_uri: "file:///home/yoshi/source/aoc/aoc2024/mix.exs", mix_project?: true, root_uri: "file:///home/yoshi/source/aoc/aoc2024", env_variables: %{}, mix_env: nil, mix_target: nil})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:46.358 [info] Child {LXical.Server.Project.Diagnostics, "aoc2024"} of Supervisor :"aoc2024::supervisor" started
+Pid: #PID<0.1570.0>
+Start Call: LXical.Server.Project.Diagnostics.start_link(%{__struct__: LXical.Project, entropy: 5967, project_module: nil, mix_exs_uri: "file:///home/yoshi/source/aoc/aoc2024/mix.exs", mix_project?: true, root_uri: "file:///home/yoshi/source/aoc/aoc2024", env_variables: %{}, mix_env: nil, mix_target: nil})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:46.361 [info] Child {LXical.Server.Project.Intelligence, "aoc2024"} of Supervisor :"aoc2024::supervisor" started
+Pid: #PID<0.1571.0>
+Start Call: LXical.Server.Project.Intelligence.start_link(%{__struct__: LXical.Project, entropy: 5967, project_module: nil, mix_exs_uri: "file:///home/yoshi/source/aoc/aoc2024/mix.exs", mix_project?: true, root_uri: "file:///home/yoshi/source/aoc/aoc2024", env_variables: %{}, mix_env: nil, mix_target: nil})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:46.362 [info] Child LXical.Server.Project.SearchListener of Supervisor :"aoc2024::supervisor" started
+Pid: #PID<0.1572.0>
+Start Call: LXical.Server.Project.SearchListener.start_link(%{__struct__: LXical.Project, entropy: 5967, project_module: nil, mix_exs_uri: "file:///home/yoshi/source/aoc/aoc2024/mix.exs", mix_project?: true, root_uri: "file:///home/yoshi/source/aoc/aoc2024", env_variables: %{}, mix_env: nil, mix_target: nil})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+23:42:46.362 [info] Lexical Initialized
+23:42:46.362 [info] opened file:///home/yoshi/source/aoc/aoc2024/lib/day02/solution.exs
+23:42:46.448 [info] Compiled aoc2024 in 92 ms
+23:42:53.969 [info] opened file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs
+23:43:24.951 [info] Completion for LxPos<<11, 6>>
+23:43:25.691 [info] Local completions are [%{arity: 0, name: "node", type: :function, origin: "Kernel", spec: "@spec node() :: node()", metadata: %{guard: true, app: :elixir}, __struct__: LXical.RemoteControl.Completion.Candidate.Function, summary: "Returns an atom representing the name of the local node.\nIf the node is not alive, `:nonode@nohost` is returned instead.", visibility: :public, parens?: true, argument_names: []}, %{arity: 1, name: "node", type: :function, origin: "Kernel", spec: "@spec node(pid() | reference() | port()) :: node()", metadata: %{guard: true, app: :elixir}, __struct__: LXical.RemoteControl.Completion.Candidate.Function, summary: "Returns the node where the given argument is located.\nThe argument can be a PID, a reference, or a port.\nIf the local node is not alive, `:nonode@nohost` is returned.", visibility: :public, parens?: true, argument_names: ["arg"]}, %{arity: 1, name: "not", type: :function, origin: "Kernel", spec: "@spec not true :: false\n@spec not false :: true", metadata: %{guard: true, app: :elixir}, __struct__: LXical.RemoteControl.Completion.Candidate.Function, summary: "Strictly boolean \"not\" operator.", visibility: :public, parens?: true, argument_names: ["value"]}]
+23:43:25.709 [info] Emitting completions: [#Protocol.Types.Completion.Item<[label: "node()", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "Returns an atom representing the name of the local node.\nIf the node is not alive, `:nonode@nohost` is returned instead.\n```elixir\n@spec node() :: node()\n```", kind: :markdown]>, detail: "(function)", filter_text: "node", insert_text_format: :snippet, sort_text: "0401_node 000", text_edit: %{__struct__: LXical.Document.Changes, document: #Inspect.Error<
+  got UndefinedFunctionError with message:
+
+      """
+      function Code.Identifier.inspect_as_atom/1 is undefined or private
+      """
+
+  while inspecting:
+
+      %{
+        version: 16,
+        path: "/home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        uri: "file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        __struct__: LXical.Document,
+        lines: %Lines<"defmodule Aoc2024.Day03.Solution do..."(27 lines)>,
+        dirty?: true,
+        language_id: "elixir-script"
+      }
+
+  Stacktrace:
+
+    (elixir 1.17.3) Code.Identifier.inspect_as_atom(LXical.Document)
+    (lx_lexical_shared 0.5.0) lib/lexical/document.ex:25: Inspect.LXical.Document.inspect/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:478: Inspect.Algebra.container_each/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:455: Inspect.Algebra.container_doc/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+
+>, edits: %{text: "node()", range: LxRange[<<11, 5>>...<<11, 6>>], __struct__: LXical.Document.Edit}}]>, #Protocol.Types.Completion.Item<[label: "node(arg)", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "Returns the node where the given argument is located.\nThe argument can be a PID, a reference, or a port.\nIf the local node is not alive, `:nonode@nohost` is returned.\n```elixir\n@spec node(pid() | reference() | port()) :: node()\n```", kind: :markdown]>, detail: "(function)", filter_text: "node", insert_text_format: :snippet, sort_text: "0401_node 001", text_edit: %{__struct__: LXical.Document.Changes, document: #Inspect.Error<
+  got UndefinedFunctionError with message:
+
+      """
+      function Code.Identifier.inspect_as_atom/1 is undefined or private
+      """
+
+  while inspecting:
+
+      %{
+        version: 16,
+        path: "/home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        uri: "file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        __struct__: LXical.Document,
+        lines: %Lines<"defmodule Aoc2024.Day03.Solution do..."(27 lines)>,
+        dirty?: true,
+        language_id: "elixir-script"
+      }
+
+  Stacktrace:
+
+    (elixir 1.17.3) Code.Identifier.inspect_as_atom(LXical.Document)
+    (lx_lexical_shared 0.5.0) lib/lexical/document.ex:25: Inspect.LXical.Document.inspect/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:478: Inspect.Algebra.container_each/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:455: Inspect.Algebra.container_doc/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+
+>, edits: %{text: "node(${1:arg})", range: LxRange[<<11, 5>>...<<11, 6>>], __struct__: LXical.Document.Edit}}]>, #Protocol.Types.Completion.Item<[label: "not(value)", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "Strictly boolean \"not\" operator.\n```elixir\n@spec not true :: false\n@spec not false :: true\n```", kind: :markdown]>, detail: "(function)", filter_text: "not", insert_text_format: :snippet, sort_text: "0401_not 001", text_edit: %{__struct__: LXical.Document.Changes, document: #Inspect.Error<
+  got UndefinedFunctionError with message:
+
+      """
+      function Code.Identifier.inspect_as_atom/1 is undefined or private
+      """
+
+  while inspecting:
+
+      %{
+        version: 16,
+        path: "/home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        uri: "file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        __struct__: LXical.Document,
+        lines: %Lines<"defmodule Aoc2024.Day03.Solution do..."(27 lines)>,
+        dirty?: true,
+        language_id: "elixir-script"
+      }
+
+  Stacktrace:
+
+    (elixir 1.17.3) Code.Identifier.inspect_as_atom(LXical.Document)
+    (lx_lexical_shared 0.5.0) lib/lexical/document.ex:25: Inspect.LXical.Document.inspect/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:478: Inspect.Algebra.container_each/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:455: Inspect.Algebra.container_doc/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+
+>, edits: %{text: "not(${1:value})", range: LxRange[<<11, 5>>...<<11, 6>>], __struct__: LXical.Document.Edit}}]>]
+23:43:31.450 [info] Completion for LxPos<<15, 6>>
+23:43:31.478 [info] Local completions are [%{arity: 0, name: "node", type: :function, origin: "Kernel", spec: "@spec node() :: node()", metadata: %{guard: true, app: :elixir}, __struct__: LXical.RemoteControl.Completion.Candidate.Function, summary: "Returns an atom representing the name of the local node.\nIf the node is not alive, `:nonode@nohost` is returned instead.", visibility: :public, parens?: true, argument_names: []}, %{arity: 1, name: "node", type: :function, origin: "Kernel", spec: "@spec node(pid() | reference() | port()) :: node()", metadata: %{guard: true, app: :elixir}, __struct__: LXical.RemoteControl.Completion.Candidate.Function, summary: "Returns the node where the given argument is located.\nThe argument can be a PID, a reference, or a port.\nIf the local node is not alive, `:nonode@nohost` is returned.", visibility: :public, parens?: true, argument_names: ["arg"]}, %{arity: 1, name: "not", type: :function, origin: "Kernel", spec: "@spec not true :: false\n@spec not false :: true", metadata: %{guard: true, app: :elixir}, __struct__: LXical.RemoteControl.Completion.Candidate.Function, summary: "Strictly boolean \"not\" operator.", visibility: :public, parens?: true, argument_names: ["value"]}]
+23:43:31.485 [info] Emitting completions: [#Protocol.Types.Completion.Item<[label: "node()", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "Returns an atom representing the name of the local node.\nIf the node is not alive, `:nonode@nohost` is returned instead.\n```elixir\n@spec node() :: node()\n```", kind: :markdown]>, detail: "(function)", filter_text: "node", insert_text_format: :snippet, sort_text: "0401_node 000", text_edit: %{__struct__: LXical.Document.Changes, document: #Inspect.Error<
+  got UndefinedFunctionError with message:
+
+      """
+      function Code.Identifier.inspect_as_atom/1 is undefined or private
+      """
+
+  while inspecting:
+
+      %{
+        version: 23,
+        path: "/home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        uri: "file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        __struct__: LXical.Document,
+        lines: %Lines<"defmodule Aoc2024.Day03.Solution do..."(20 lines)>,
+        dirty?: true,
+        language_id: "elixir-script"
+      }
+
+  Stacktrace:
+
+    (elixir 1.17.3) Code.Identifier.inspect_as_atom(LXical.Document)
+    (lx_lexical_shared 0.5.0) lib/lexical/document.ex:25: Inspect.LXical.Document.inspect/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:478: Inspect.Algebra.container_each/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:455: Inspect.Algebra.container_doc/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+
+>, edits: %{text: "node()", range: LxRange[<<15, 5>>...<<15, 6>>], __struct__: LXical.Document.Edit}}]>, #Protocol.Types.Completion.Item<[label: "node(arg)", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "Returns the node where the given argument is located.\nThe argument can be a PID, a reference, or a port.\nIf the local node is not alive, `:nonode@nohost` is returned.\n```elixir\n@spec node(pid() | reference() | port()) :: node()\n```", kind: :markdown]>, detail: "(function)", filter_text: "node", insert_text_format: :snippet, sort_text: "0401_node 001", text_edit: %{__struct__: LXical.Document.Changes, document: #Inspect.Error<
+  got UndefinedFunctionError with message:
+
+      """
+      function Code.Identifier.inspect_as_atom/1 is undefined or private
+      """
+
+  while inspecting:
+
+      %{
+        version: 23,
+        path: "/home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        uri: "file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        __struct__: LXical.Document,
+        lines: %Lines<"defmodule Aoc2024.Day03.Solution do..."(20 lines)>,
+        dirty?: true,
+        language_id: "elixir-script"
+      }
+
+  Stacktrace:
+
+    (elixir 1.17.3) Code.Identifier.inspect_as_atom(LXical.Document)
+    (lx_lexical_shared 0.5.0) lib/lexical/document.ex:25: Inspect.LXical.Document.inspect/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:478: Inspect.Algebra.container_each/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:455: Inspect.Algebra.container_doc/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+
+>, edits: %{text: "node(${1:arg})", range: LxRange[<<15, 5>>...<<15, 6>>], __struct__: LXical.Document.Edit}}]>, #Protocol.Types.Completion.Item<[label: "not(value)", kind: :function, documentation: #Protocol.Types.Markup.Content<[value: "Strictly boolean \"not\" operator.\n```elixir\n@spec not true :: false\n@spec not false :: true\n```", kind: :markdown]>, detail: "(function)", filter_text: "not", insert_text_format: :snippet, sort_text: "0401_not 001", text_edit: %{__struct__: LXical.Document.Changes, document: #Inspect.Error<
+  got UndefinedFunctionError with message:
+
+      """
+      function Code.Identifier.inspect_as_atom/1 is undefined or private
+      """
+
+  while inspecting:
+
+      %{
+        version: 23,
+        path: "/home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        uri: "file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        __struct__: LXical.Document,
+        lines: %Lines<"defmodule Aoc2024.Day03.Solution do..."(20 lines)>,
+        dirty?: true,
+        language_id: "elixir-script"
+      }
+
+  Stacktrace:
+
+    (elixir 1.17.3) Code.Identifier.inspect_as_atom(LXical.Document)
+    (lx_lexical_shared 0.5.0) lib/lexical/document.ex:25: Inspect.LXical.Document.inspect/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:478: Inspect.Algebra.container_each/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:455: Inspect.Algebra.container_doc/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+
+>, edits: %{text: "not(${1:value})", range: LxRange[<<15, 5>>...<<15, 6>>], __struct__: LXical.Document.Edit}}]>]
+23:43:32.802 [info] Compiled aoc2024 in 3 ms
+23:43:34.872 [info] Compiled aoc2024 in 2 ms
+23:43:36.981 [info] Response %{error: nil, id: 4, result: %{__struct__: LXical.Document.Changes, document: #Inspect.Error<
+  got UndefinedFunctionError with message:
+
+      """
+      function Code.Identifier.inspect_as_atom/1 is undefined or private
+      """
+
+  while inspecting:
+
+      %{
+        version: 25,
+        path: "/home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        uri: "file:///home/yoshi/source/aoc/aoc2024/lib/day03/solution.exs",
+        __struct__: LXical.Document,
+        lines: %Lines<"defmodule Aoc2024.Day03.Solution do..."(20 lines)>,
+        dirty?: false,
+        language_id: "elixir-script"
+      }
+
+  Stacktrace:
+
+    (elixir 1.17.3) Code.Identifier.inspect_as_atom(LXical.Document)
+    (lx_lexical_shared 0.5.0) lib/lexical/document.ex:25: Inspect.LXical.Document.inspect/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+    (elixir 1.17.3) lib/inspect/algebra.ex:478: Inspect.Algebra.container_each/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:455: Inspect.Algebra.container_doc/6
+    (elixir 1.17.3) lib/inspect/algebra.ex:347: Inspect.Algebra.to_doc/2
+    (elixir 1.17.3) lib/inspect.ex:287: Inspect.List.keyword/2
+
+>, edits: []}, __struct__: LXical.Protocol.Responses.Formatting}
+23:43:42.933 [info] Emitting completions: []
+23:43:43.961 [info] Emitting completions: []
+23:43:44.061 [info] Emitting completions: []
+23:43:44.146 [info] Emitting completions: []
+23:43:44.195 [info] Emitting completions: []
+23:43:45.089 [info] Compiled aoc2024 in 2 ms
+23:43:49.238 [info] Compiled aoc2024 in 3 ms
