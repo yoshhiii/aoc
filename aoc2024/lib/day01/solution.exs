@@ -20,7 +20,7 @@ defmodule Aoc2024.Day01.Solution do
     {left_storted, right_sorted}
   end
 
-  def part1(file_path) do
+  def part_one(file_path) do
     {left_sorted, right_sorted} = split_values(read_input(file_path))
 
     Enum.zip(left_sorted, right_sorted)
@@ -29,7 +29,7 @@ defmodule Aoc2024.Day01.Solution do
     |> IO.inspect()
   end
 
-  def part2(file_path) do
+  def part_two(file_path) do
     {left_sorted, right_sorted} = split_values(read_input(file_path))
 
     left_sorted
@@ -45,5 +45,5 @@ defmodule Aoc2024.Day01.Solution do
   end
 end
 
-# Aoc2024.Day01.part1()
-Aoc2024.Day01.Solution.part2("lib/day01/input")
+# Aoc2024.Day01.part_one()
+Aoc2024.Day01.Solution.part_two("lib/day01/input")
